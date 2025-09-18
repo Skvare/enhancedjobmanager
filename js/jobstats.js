@@ -455,10 +455,10 @@
           '<span class="error-rate ' + errorRateClass + '">' + (job.error_rate || 0) + '%</span>',
           '<div class="action-buttons">' +
           '<button type="button" class="crm-button crm-button-small view-job-logs" data-job-id="' + job.id + '" title="View Logs">' +
-          '<i class="crm-i fa-list"></i>' +
+          '<i class="crm-i fa-list" role="img" aria-hidden="true"></i>' +
           '</button>' +
           '<a href="' + CRM.url('civicrm/admin/job', {action: 'update', id: job.id, reset: 1}) + '" class="crm-button crm-button-small" title="Edit Job">' +
-          '<i class="crm-i fa-edit"></i>' +
+          '<i class="crm-i fa-edit" role="img" aria-hidden="true"></i>' +
           '</a>' +
           '</div>'
         ]);
@@ -489,7 +489,7 @@
           duration,
           '<code class="small">' + command + '</code>',
           '<button type="button" class="crm-button crm-button-small view-execution-details" data-execution-id="' + execution.id + '" title="View Details">' +
-          '<i class="crm-i fa-eye"></i>' +
+          '<i class="crm-i fa-eye" role="img" aria-hidden="true"></i>' +
           '</button>'
         ]);
       });
@@ -500,10 +500,10 @@
     // Get status HTML
     getStatusHtml: function(status) {
       var icons = {
-        success: '<i class="crm-i fa-check-circle text-success"></i> Success',
-        warning: '<i class="crm-i fa-exclamation-triangle text-warning"></i> Warning',
-        error: '<i class="crm-i fa-times-circle text-danger"></i> Error',
-        unknown: '<i class="crm-i fa-question-circle text-muted"></i> Unknown'
+        success: '<i class="crm-i fa-check-circle text-success" role="img" aria-hidden="true"></i> Success',
+        warning: '<i class="crm-i fa-exclamation-triangle text-warning" role="img" aria-hidden="true"></i> Warning',
+        error: '<i class="crm-i fa-times-circle text-danger" role="img" aria-hidden="true"></i> Error',
+        unknown: '<i class="crm-i fa-question-circle text-muted" role="img" aria-hidden="true"></i> Unknown'
       };
       return '<span class="crm-status-' + status + '">' + (icons[status] || icons.unknown) + '</span>';
     },
@@ -532,7 +532,7 @@
 
     // Show job logs modal
     showJobLogs: function(jobId) {
-      this.showModal('Job Logs', '<div class="loading"><i class="crm-i fa-spinner fa-spin"></i> Loading job logs...</div>');
+      this.showModal('Job Logs', '<div class="loading"><i class="crm-i fa-spinner fa-spin" role="img" aria-hidden="true"></i> Loading job logs...</div>');
 
       // In a real implementation, you would load job logs here
       setTimeout(() => {
@@ -544,7 +544,7 @@
 
     // Show execution details modal
     showExecutionDetails: function(executionId) {
-      this.showModal('Execution Details', '<div class="loading"><i class="crm-i fa-spinner fa-spin"></i> Loading execution details...</div>');
+      this.showModal('Execution Details', '<div class="loading"><i class="crm-i fa-spinner fa-spin" role="img" aria-hidden="true"></i> Loading execution details...</div>');
 
       this.makeApiCall(this.config.apiEndpoints.executionDetails, {execution_id: executionId})
         .then(data => {
@@ -723,13 +723,13 @@
     // Show loading state
     showLoadingState: function() {
       $('.loading-indicator').show();
-      $('#refresh-stats').prop('disabled', true).html('<i class="crm-i fa-spinner fa-spin"></i> Loading...');
+      $('#refresh-stats').prop('disabled', true).html('<i class="crm-i fa-spinner fa-spin" role="img" aria-hidden="true"></i> Loading...');
     },
 
     // Hide loading state
     hideLoadingState: function() {
       $('.loading-indicator').hide();
-      $('#refresh-stats').prop('disabled', false).html('<i class="crm-i fa-sync"></i> Refresh');
+      $('#refresh-stats').prop('disabled', false).html('<i class="crm-i fa-sync" role="img" aria-hidden="true"></i> Refresh');
     },
 
     // Show notification
