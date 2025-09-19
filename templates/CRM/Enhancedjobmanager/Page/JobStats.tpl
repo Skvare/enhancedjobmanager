@@ -205,7 +205,7 @@
               <td>
                 <div class="crm-submit-buttons">
                   <a href="{crmURL p='civicrm/admin/job' q="action=update&id=`$job.id`&reset=1"}"
-                     class="crm-button crm-button-small" title="{ts}Edit Job{/ts}">
+                     class="crm-button crm-button-small" title="{ts escape='htmlattribute'}Edit Job{/ts}">
                     <i class="crm-i fa-edit"></i>
                   </a>
                 </div>
@@ -514,7 +514,7 @@
                   nextRun,
                   job.execution_count || 0,
                   '<span class="error-rate ' + (job.error_rate > 10 ? 'high-error' : job.error_rate > 5 ? 'medium-error' : 'low-error') + '">' + job.error_rate + '%</span>',
-                  '<div class="crm-submit-buttons"><a href="'+ CRM.url('civicrm/admin/job', {action: 'update', id: job.id, reset: 1}) + '"class="crm-button crm-button-small" title="{ts}Edit Job{/ts}"> <i class="crm-i fa-edit"></i></a> </div>'
+                  '<div class="crm-submit-buttons"><a href="'+ CRM.url('civicrm/admin/job', {action: 'update', id: job.id, reset: 1}) + '"class="crm-button crm-button-small" title="{ts escape='htmlattribute'}Edit Job{/ts}"> <i class="crm-i fa-edit"></i></a> </div>'
                 ]);
               });
             }
