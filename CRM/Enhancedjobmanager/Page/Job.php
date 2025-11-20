@@ -420,6 +420,12 @@ class CRM_Enhancedjobmanager_Page_Job extends CRM_Admin_Page_Job {
       if ($job->api_action === 'process_membership_reminder_date' || $job->api_action === 'update_greeting') {
         $action -= CRM_Core_Action::ENABLE;
         $action -= CRM_Core_Action::DISABLE;
+        if ($job->is_active) {
+          $statusCounts['active']++;
+        }
+        else {
+          $statusCounts['inactive']++;
+        }
       }
       elseif ($job->is_active) {
         $action -= CRM_Core_Action::ENABLE;
