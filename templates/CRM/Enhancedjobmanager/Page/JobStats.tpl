@@ -60,7 +60,7 @@
     <div class="stats-grid">
       <div class="stat-card" id="total-executions-card">
         <div class="stat-icon">
-          <i class="crm-i fa-play-circle"></i>
+          <i class="crm-i fa-play-circle" role="img" aria-hidden="true"></i>
         </div>
         <div class="stat-content">
           <div class="stat-value" id="total-executions">{$jobStats.total_executions|default:0}</div>
@@ -71,7 +71,7 @@
 
       <div class="stat-card" id="success-rate-card">
         <div class="stat-icon success">
-          <i class="crm-i fa-check-circle"></i>
+          <i class="crm-i fa-check-circle" role="img" aria-hidden="true"></i>
         </div>
         <div class="stat-content">
           <div class="stat-value" id="success-rate">{$jobStats.success_rate|default:0}%</div>
@@ -82,7 +82,7 @@
 
       <div class="stat-card" id="error-rate-card">
         <div class="stat-icon error">
-          <i class="crm-i fa-exclamation-circle"></i>
+          <i class="crm-i fa-exclamation-circle" role="img" aria-hidden="true"></i>
         </div>
         <div class="stat-content">
           <div class="stat-value" id="error-rate">{$jobStats.error_rate|default:0}%</div>
@@ -93,7 +93,7 @@
 
       <div class="stat-card" id="avg-duration-card">
         <div class="stat-icon">
-          <i class="crm-i fa-clock"></i>
+          <i class="crm-i fa-clock" role="img" aria-hidden="true"></i>
         </div>
         <div class="stat-content">
           <div class="stat-value" id="avg-duration">{$jobStats.avg_duration|default:0}s</div>
@@ -167,13 +167,13 @@
               <td>
                   <span class="crm-status-{$job.status}">
                     {if $job.status == 'success'}
-                      <i class="crm-i fa-check-circle"></i> {ts}Healthy{/ts}
+                      <i class="crm-i fa-check-circle" role="img" aria-hidden="true"></i> {ts}Healthy{/ts}
                     {elseif $job.status == 'warning'}
-                      <i class="crm-i fa-exclamation-triangle"></i> {ts}Warning{/ts}
+                      <i class="crm-i fa-exclamation-triangle" role="img" aria-hidden="true"></i> {ts}Warning{/ts}
                     {elseif $job.status == 'error'}
-                      <i class="crm-i fa-times-circle"></i> {ts}Error{/ts}
+                      <i class="crm-i fa-times-circle" role="img" aria-hidden="true"></i> {ts}Error{/ts}
                     {else}
-                      <i class="crm-i fa-question-circle"></i> {ts}Unknown{/ts}
+                      <i class="crm-i fa-question-circle" role="img" aria-hidden="true"></i> {ts}Unknown{/ts}
                     {/if}
                   </span>
               </td>
@@ -206,7 +206,7 @@
                 <div class="crm-submit-buttons">
                   <a href="{crmURL p='civicrm/admin/job' q="action=update&id=`$job.id`&reset=1"}"
                      class="crm-button crm-button-small" title="{ts}Edit Job{/ts}">
-                    <i class="crm-i fa-edit"></i>
+                    <i class="crm-i fa-edit" role="img" aria-hidden="true"></i>
                   </a>
                 </div>
               </td>
@@ -225,7 +225,7 @@
         <h3>{ts}Recent Job Executions{/ts}</h3>
         <div class="section-actions">
           <button type="button" id="refresh-executions" class="crm-button crm-button-small">
-            <i class="crm-i fa-sync"></i> {ts}Refresh{/ts}
+            <i class="crm-i fa-sync" role="img" aria-hidden="true"></i> {ts}Refresh{/ts}
           </button>
         </div>
       </div>
@@ -250,15 +250,15 @@
               <td>
                   <span class="crm-status-{$execution.status}">
                     {if $execution.status == 'RUNNING'}
-                      <i class="crm-i fa-check-circle text-success"></i> {ts}Running{/ts}
+                      <i class="crm-i fa-check-circle text-success" role="img" aria-hidden="true"></i> {ts}Running{/ts}
                     {elseif $execution.status == 'COMPLETED'}
-                      <i class="crm-i fa-check-circle text-success"></i> {ts}Success{/ts}
+                      <i class="crm-i fa-check-circle text-success" role="img" aria-hidden="true"></i> {ts}Success{/ts}
                     {elseif $execution.status == 'LONG_RUNNING' OR $execution.status == 'STUCK_OR_FAILED' OR $execution.status == 'NEVER_RUN'}
-                      <i class="crm-i fa-exclamation-triangle text-warning"></i> {ts}Warning{/ts}
+                      <i class="crm-i fa-exclamation-triangle text-warning" role="img" aria-hidden="true"></i> {ts}Warning{/ts}
                     {elseif $execution.status == 'DATA_ERROR'}
-                      <i class="crm-i fa-times-circle text-danger"></i> {ts}Error{/ts}
+                      <i class="crm-i fa-times-circle text-danger" role="img" aria-hidden="true"></i> {ts}Error{/ts}
                     {else}
-                      <i class="crm-i fa-question-circle text-muted"></i> {ts}Unknown{/ts}
+                      <i class="crm-i fa-question-circle text-muted" role="img" aria-hidden="true"></i> {ts}Unknown{/ts}
                     {/if}
                   </span>
               </td>
@@ -294,7 +294,7 @@
   <div class="modal-body">
     <div id="modal-content">
       <div class="loading">
-        <i class="crm-i fa-spinner fa-spin"></i>
+        <i class="crm-i fa-spinner fa-spin" role="img" aria-hidden="true"></i>
         {ts}Loading details...{/ts}
       </div>
     </div>
@@ -491,16 +491,16 @@
                 var statusIcon = '';
                 switch(job.status) {
                   case 'success':
-                    statusIcon = '<i class="crm-i fa-check-circle text-success"></i> Healthy';
+                    statusIcon = '<i class="crm-i fa-check-circle text-success" role="img" aria-hidden="true"></i> Healthy';
                     break;
                   case 'warning':
-                    statusIcon = '<i class="crm-i fa-exclamation-triangle text-warning"></i> Warning';
+                    statusIcon = '<i class="crm-i fa-exclamation-triangle text-warning" role="img" aria-hidden="true"></i> Warning';
                     break;
                   case 'error':
-                    statusIcon = '<i class="crm-i fa-times-circle text-danger"></i> Error';
+                    statusIcon = '<i class="crm-i fa-times-circle text-danger" role="img" aria-hidden="true"></i> Error';
                     break;
                   default:
-                    statusIcon = '<i class="crm-i fa-question-circle text-muted"></i> Unknown';
+                    statusIcon = '<i class="crm-i fa-question-circle text-muted" role="img" aria-hidden="true"></i> Unknown';
                 }
 
                 var lastRun = job.last_run ? new Date(job.last_run).toLocaleString() : 'Never';
@@ -514,7 +514,7 @@
                   nextRun,
                   job.execution_count || 0,
                   '<span class="error-rate ' + (job.error_rate > 10 ? 'high-error' : job.error_rate > 5 ? 'medium-error' : 'low-error') + '">' + job.error_rate + '%</span>',
-                  '<div class="crm-submit-buttons"><a href="'+ CRM.url('civicrm/admin/job', {action: 'update', id: job.id, reset: 1}) + '"class="crm-button crm-button-small" title="{ts}Edit Job{/ts}"> <i class="crm-i fa-edit"></i></a> </div>'
+                  '<div class="crm-submit-buttons"><a href="'+ CRM.url('civicrm/admin/job', {action: 'update', id: job.id, reset: 1}) + '"class="crm-button crm-button-small" title="{ts}Edit Job{/ts}"> <i class="crm-i fa-edit" role="img" aria-hidden="true"></i></a> </div>'
                 ]);
               });
             }
@@ -537,21 +537,21 @@
                 var statusIcon = '';
                 switch(execution.status) {
                   case 'COMPLETED':
-                    statusIcon = '<i class="crm-i fa-check-circle text-success"></i> Success';
+                    statusIcon = '<i class="crm-i fa-check-circle text-success" role="img" aria-hidden="true"></i> Success';
                     break;
                   case 'RUNNING':
-                    statusIcon = '<i class="crm-i fa-check-circle text-success"></i> Running';
+                    statusIcon = '<i class="crm-i fa-check-circle text-success" role="img" aria-hidden="true"></i> Running';
                     break;
                   case 'LONG_RUNNING':
                   case 'STUCK_OR_FAILED':
                   case 'NEVER_RUN':
-                    statusIcon = '<i class="crm-i fa-exclamation-triangle text-warning"></i> Warning';
+                    statusIcon = '<i class="crm-i fa-exclamation-triangle text-warning" role="img" aria-hidden="true"></i> Warning';
                     break;
                   case 'DATA_ERROR':
-                    statusIcon = '<i class="crm-i fa-times-circle text-danger"></i> Error';
+                    statusIcon = '<i class="crm-i fa-times-circle text-danger" role="img" aria-hidden="true"></i> Error';
                     break;
                   default:
-                    statusIcon = '<i class="crm-i fa-question-circle text-muted"></i> Unknown';
+                    statusIcon = '<i class="crm-i fa-question-circle text-muted" role="img" aria-hidden="true"></i> Unknown';
                 }
 
                 var runTime = new Date(execution.run_time).toLocaleString();
@@ -609,7 +609,7 @@
         // Show job logs modal
         showJobLogs: function(jobId) {
           $('#modal-title').text('Job Logs');
-          $('#modal-content').html('<div class="loading"><i class="crm-i fa-spinner fa-spin"></i> Loading job logs...</div>');
+          $('#modal-content').html('<div class="loading"><i class="crm-i fa-spinner fa-spin" role="img" aria-hidden="true"></i> Loading job logs...</div>');
           $('#job-log-modal').show();
 
           // Load job logs via API
@@ -619,7 +619,7 @@
         // Show execution details modal
         showExecutionDetails: function(executionId) {
           $('#modal-title').text('Execution Details');
-          $('#modal-content').html('<div class="loading"><i class="crm-i fa-spinner fa-spin"></i> Loading execution details...</div>');
+          $('#modal-content').html('<div class="loading"><i class="crm-i fa-spinner fa-spin" role="img" aria-hidden="true"></i> Loading execution details...</div>');
           $('#job-log-modal').show();
 
           // Load execution details via API
