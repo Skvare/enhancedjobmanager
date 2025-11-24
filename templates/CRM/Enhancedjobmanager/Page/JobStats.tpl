@@ -485,7 +485,7 @@
             // Update job performance table
             var table = $('#job-performance-table').DataTable();
             table.clear();
-
+            var editButtonTitle = "{/literal}{ts escape='js'}Edit Job{/ts}{literal}";
             if (result.values) {
               result.values.forEach(function(job) {
                 var statusIcon = '';
@@ -514,7 +514,7 @@
                   nextRun,
                   job.execution_count || 0,
                   '<span class="error-rate ' + (job.error_rate > 10 ? 'high-error' : job.error_rate > 5 ? 'medium-error' : 'low-error') + '">' + job.error_rate + '%</span>',
-                  '<div class="crm-submit-buttons"><a href="'+ CRM.url('civicrm/admin/job', {action: 'update', id: job.id, reset: 1}) + '"class="crm-button crm-button-small" title="{ts escape='htmlattribute'}Edit Job{/ts}"> <i class="crm-i fa-edit" role="img" aria-hidden="true"></i></a> </div>'
+                  '<div class="crm-submit-buttons"><a href="'+ CRM.url('civicrm/admin/job', {action: 'update', id: job.id, reset: 1}) + '"class="crm-button crm-button-small" title="' + editButtonTitle + '"> <i class="crm-i fa-edit" role="img" aria-hidden="true"></i></a> </div>'
                 ]);
               });
             }
