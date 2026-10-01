@@ -44,7 +44,7 @@ class CRM_Enhancedjobmanager_Page_JobStatsAjax {
    * Get recent executions
    */
   public static function getRecentExecutions() {
-    $limit = CRM_Utils_Request::retrieve('limit', 'Integer', CRM_Core_DAO::$_nullObject, FALSE, 50);
+    $limit = CRM_Utils_Request::retrieve('limit', 'Integer', NULL, FALSE, 50);
     $page = new CRM_Enhancedjobmanager_Page_JobStats();
     $executions = $page->getRecentExecutions($limit);
 
