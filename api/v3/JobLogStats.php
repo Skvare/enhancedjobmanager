@@ -53,7 +53,7 @@ function civicrm_api3_job_log_stats_performance($params) {
  */
 function civicrm_api3_job_log_stats_recentexecutions($params) {
   $page = new CRM_Enhancedjobmanager_Page_JobStats();
-  $executions = $page->getRecentExecutions(CRM_Utils_Request::retrieve('limit', 'Integer', CRM_Core_DAO::$_nullObject, FALSE, 50));
+  $executions = $page->getRecentExecutions(CRM_Utils_Request::retrieve('limit', 'Integer', NULL, FALSE, 50));
 
   return civicrm_api3_create_success($executions, $params);
 }

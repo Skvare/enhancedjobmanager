@@ -592,7 +592,7 @@ ORDER BY j.last_run DESC
    * AJAX endpoint for fetching recent executions
    */
   public static function getRecentExecutionsAjax() {
-    $limit = CRM_Utils_Request::retrieve('limit', 'Integer', CRM_Core_DAO::$_nullObject, FALSE, 50);
+    $limit = CRM_Utils_Request::retrieve('limit', 'Integer', NULL, FALSE, 50);
     $page = new self();
     $executions = $page->getRecentExecutions($limit);
 
