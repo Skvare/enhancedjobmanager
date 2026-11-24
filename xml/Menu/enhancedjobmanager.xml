@@ -20,6 +20,7 @@
     <access_arguments>view job statistics</access_arguments>
     <page_type>1</page_type>
     <is_public>false</is_public>
+    <is_ajax>true</is_ajax>
   </item>
   <item>
     <path>civicrm/admin/job/stats/ajax/getchartdata</path>
@@ -27,6 +28,7 @@
     <access_arguments>view job statistics</access_arguments>
     <page_type>1</page_type>
     <is_public>false</is_public>
+    <is_ajax>true</is_ajax>
   </item>
   <item>
     <path>civicrm/admin/job/stats/ajax/getjoblist</path>
@@ -34,6 +36,7 @@
     <access_arguments>view job statistics</access_arguments>
     <page_type>1</page_type>
     <is_public>false</is_public>
+    <is_ajax>true</is_ajax>
   </item>
   <item>
     <path>civicrm/admin/job/stats/ajax/getrecentexecutions</path>
@@ -41,6 +44,7 @@
     <access_arguments>view job statistics</access_arguments>
     <page_type>1</page_type>
     <is_public>false</is_public>
+    <is_ajax>true</is_ajax>
   </item>
   <item>
     <path>civicrm/admin/job/stats/ajax/getexecutiondetails</path>
@@ -48,5 +52,6 @@
     <access_arguments>view job statistics</access_arguments>
     <page_type>1</page_type>
     <is_public>false</is_public>
+    <is_ajax>true</is_ajax>
   </item>
 </menu>
